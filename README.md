@@ -1,2 +1,4 @@
-De prueba
+El piedra papel o tijera esta hecho en un lenguaje llamado **python** si ustedes desean jugarlo, pueden copiar este codigo y llevarselo local haciendo en git el comando "git clone", van a la pagina original de python y lo instalan. En el simbolo del sistema (si usan windows) se tienen que instalar la dependencia "keyboard" ponen este comando "pip install keyboard" y ponen el codigo en la plataforma que deseen (visual studio code, notepad++, etc), luego ponen el codigo y deben compilarlo, esto se hace primero en el simbolo del sistema poniendo "pip install pyinstaller" y esperan a que se instale. Luego deben abrir una terminal (simbolo del sistema o git) y dirijirse al directorio donde se encuentra su codigo en windows es "cd ruta\a\tu\codigo"
+y en linux es "ls ruta\a\tu\codigo" en ese directorio ejecutan el comando "pyinstaller -F el-nombre-del-archivo". Cuando se compila se iran con "cd" o "ls" al directorio "dist" dentro ejecutan "el-nombre-del-archivo.exe" y ya tendrian el juego para ustedes.
+Saludos y espero lo disfruten.
 # Holamundo-en-python
