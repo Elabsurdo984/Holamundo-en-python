@@ -1,7 +1,54 @@
 import random
 import os
+def mostrar_instrucciones():
+    """Mostrar las instrucciones del juego."""
+    print("\n--- INSTRUCCIONES DEL JUEGO ---")
+    print("1. El objetivo del juego es ganar puntos al jugar Piedra, Papel o Tijera.")
+    print("2. Puedes elegir entre 'piedra', 'papel' o 'tijera' para enfrentarte a la computadora.")
+    print("3. Las reglas son simples:")
+    print("   - Piedra vence a Tijera.")
+    print("   - Tijera vence a Papel.")
+    print("   - Papel vence a Piedra.")
+    print("4. Si ganas, obtendrás 100 puntos.")
+    print("5. Si pierdes, perderás 40 puntos, a menos que hayas comprado un objeto en la tienda.")
+    print("6. Puedes usar objetos comprados en la tienda:")
+    print("   - Espada: Te da un segundo intento si pierdes sin perder puntos.")
+    print("   - Escudo: Previene que pierdas puntos si pierdes.")
+    print("   - Poción: Duplica tus puntos cuando ganas.")
+    print("7. ¡Diviértete y trata de obtener el mayor puntaje posible!")
+    print("\nPresiona Enter para regresar al menú principal.")
+    input()  # Pausa para que el jugador presione enter antes de volver al menú
 
-# Nombre del archivo donde se guardará el puntaje
+
+def mostrar_gesto_ascii(eleccion):
+    if eleccion == 'piedra':
+        return '''
+           _______
+       ----'   ____)
+              (_____)
+              (_____)
+              (____)
+       ----.__(___)
+        '''
+    elif eleccion == 'papel':
+        return '''
+           _______
+       ----'   ____)____
+                 ______)
+                _______)
+               _______)
+       ----.__________)
+        '''
+    elif eleccion == 'tijera':
+        return '''
+           _______
+       ----'   ____)____
+                 ______)
+            __________)
+           (____)
+       ----.__(___)
+        '''
+
 archivo_puntaje = 'puntaje.txt'
 
 def cargar_puntaje():
@@ -62,7 +109,11 @@ def jugar_piedra_papel_tijera(efecto):
             continue
 
         eleccion_computadora = random.choice(opciones)
-        print(f"La computadora eligió: {eleccion_computadora}")
+        print(f"\nTú elegiste: {eleccion_usuario}")
+        print(mostrar_gesto_ascii(eleccion_usuario))
+        
+        print(f"\nLa computadora eligió: {eleccion_computadora}")
+        print(mostrar_gesto_ascii(eleccion_computadora))
 
         if eleccion_usuario == eleccion_computadora:
             print("¡Es un empate!")
@@ -95,6 +146,7 @@ def jugar_piedra_papel_tijera(efecto):
 
     return puntaje
 
+
 def mostrar_puntaje():
     """Mostrar el puntaje actual."""
     puntaje = cargar_puntaje()
@@ -115,7 +167,8 @@ def menu_principal():
         print("1. Jugar Piedra, Papel o Tijera")
         print("2. Ir a la tienda")
         print("3. Mostrar puntaje")
-        print("4. Salir")
+        print("4. Instrucciones")
+        print("5. Salir")
 
         eleccion_menu = input("Elige una opción (1, 2, 3, 4): ")
 
@@ -134,14 +187,17 @@ def menu_principal():
 
         elif eleccion_menu == '3':
             mostrar_puntaje()
+            
+        elif eleccion_menu == '4':  # Nueva opción para mostrar instrucciones
+            mostrar_instrucciones()
 
-        elif eleccion_menu == '4':
+        elif eleccion_menu == '5':
             puntaje = cargar_puntaje()
             print(f"¡Gracias por jugar! Tu puntaje final es: {puntaje}")
             break
 
         else:
-            print("Opción no válida. Por favor elige 1, 2, 3 o 4.")
+            print("Opción no válida. Por favor elige 1, 2, 3, 4 o 5.")
 
 # Ejecutar el menú principal
 menu_principal()
