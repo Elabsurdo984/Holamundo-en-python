@@ -23,8 +23,8 @@ def mostrar_instrucciones():
 def mostrar_gesto_ascii(eleccion):
     if eleccion == 'piedra':
         return '''
-           _______
-       ----'   ____)
+            ______
+       ----'   ___)
               (_____)
               (_____)
               (____)
@@ -32,21 +32,21 @@ def mostrar_gesto_ascii(eleccion):
         '''
     elif eleccion == 'papel':
         return '''
-           _______
-       ----'   ____)____
-                 ______)
-                _______)
-               _______)
-       ----.__________)
+            _______
+       ----'   ____)___
+                 _______)
+                _________)
+               _________)
+       ----._________)
         '''
     elif eleccion == 'tijera':
         return '''
-           _______
+            _______
        ----'   ____)____
-                 ______)
-            __________)
-           (____)
-       ----.__(___)
+                 _______)
+            ___________)
+           (______)
+       ----.__(_)
         '''
 
 archivo_puntaje = 'puntaje.txt'
